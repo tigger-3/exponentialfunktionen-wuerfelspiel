@@ -1,5 +1,7 @@
-import pygame
 import os
+
+import pygame
+
 import colorcombiner
 
 if not os.path.exists("data"):
@@ -91,11 +93,11 @@ def convertmatrix(datain, folder, name, width, height):
         di = datain[i]
         while j < nheight:
             if i < width:
-                if j < di.__len__() + hd / hfactor - 1:
+                if j <= di.__len__() + hd / hfactor:
                     hj = 0
                     cl = []
                     while hj < hfactor:
-                        if (di.__len__()) - (n * hfactor + hj) > 1:
+                        if (di.__len__()) - (n * hfactor + hj) > 0:
                             dbval = (di.__len__()) - (n * hfactor + hj) - 1
                             d = di[dbval]
                             c = color(d)
